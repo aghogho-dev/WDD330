@@ -20,8 +20,18 @@ async function addToCartHandler(e) {
 }
 
 // add listener to Add to Cart button
-window.onload = () => {
-  document
-  .getElementById("addToCart")
-  .addEventListener("click", addToCartHandler);
-};
+document.addEventListener("DOMContentLoaded", () => {
+  const addToCartButton = document.getElementById("addToCart");
+  if (addToCartButton) {
+    addToCartButton.addEventListener("click", addToCartHandler);
+  } else {
+    console.log('Element with id "addToCart" not found.');
+  }
+});
+
+
+// window.onload = () => {
+//   document
+//   .getElementById("addToCart")
+//   .addEventListener("click", addToCartHandler);
+// };
