@@ -16,20 +16,20 @@ product.init();
 // }
 
 // add to cart button event handler
-async function addToCartHandler(e) {
-  const productById = await dataSource.findProductById(e.target.dataset.id);
-  product.addToCart(productById);
-}
+// async function addToCartHandler(e) {
+//   const productById = await dataSource.findProductById(e.target.dataset.id);
+//   product.addToCart(productById);
+// }
 
 // add listener to Add to Cart button
-document.addEventListener("DOMContentLoaded", () => {
-  const addToCartButton = document.getElementById("addToCart");
-  if (addToCartButton) {
-    addToCartButton.addEventListener("click", addToCartHandler);
-  } else {
-    console.log('Element with id "addToCart" not found.');
-  }
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   const addToCartButton = document.getElementById("addToCart");
+//   if (addToCartButton) {
+//     addToCartButton.addEventListener("click", addToCartHandler);
+//   } else {
+//     console.log('Element with id "addToCart" not found.');
+//   }
+// });
 
 
 // window.onload = () => {

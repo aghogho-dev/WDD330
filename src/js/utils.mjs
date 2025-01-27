@@ -1,5 +1,5 @@
 // wrapper for querySelector...returns matching element
-export default function qs(selector, parent = document) {
+export function qs(selector, parent = document) {
   return parent.querySelector(selector);
 }
 // or a more concise version if you are into that sort of thing:
