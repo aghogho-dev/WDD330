@@ -5,7 +5,7 @@ function productDetailsTemplate(product) {
     <h2 class="divider">${product.NameWithoutBrand}</h2>
     <img
         class="divider"
-        src="${product.Image}"
+        src="${product.Images.PrimaryLarge}"
         alt="${product.NameWithoutBrand}"
     />
     <p class="product-card__price">${product.FinalPrice}</p>
@@ -37,17 +37,25 @@ export default class ProductDetails {
     addToCart() {
         // setLocalStorage("so-cart", this.product);
 
-        const cart = getLocalStorage("so-cart") || [];
-        const existingProductId = cart.findIndex(item => item.Id === this.product.Id);
+        // const cart = getLocalStorage("so-cart") || [];
+        // const existingProductId = cart.findIndex(item => item.Id === this.product.Id);
 
-        if (existingProductId !== -1) {
-            cart[existingProductId].quantity++;
-        } else {
-            const productWithQuantity = {...this.product, quantity: 1};
-            cart.push(productWithQuantity);
+        // if (existingProductId !== -1) {
+        //     cart[existingProductId].quantity++;
+        // } else {
+        //     const productWithQuantity = {...this.product, quantity: 1};
+        //     cart.push(productWithQuantity);
+        // }
+
+        // setLocalStorage("so-cart", cart);
+
+        let cartContents = getLocalStorage("so-cart");
+        if (!cartContents) {
+            cartContents = [];
         }
 
-        setLocalStorage("so-cart", cart);
+        cartContents.push(this.product);
+        setLocalStorage("so-cart", cartContents);
     }
 
     renderProductDetails(selector) {
