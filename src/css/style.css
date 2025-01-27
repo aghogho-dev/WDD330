@@ -202,6 +202,32 @@ button {
   grid-column: 3;
 }
 
+.product-grid {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.product-list {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.product-grid img {
+  width: 100%;
+  height: auto;
+}
+
+.product-grid li {
+  list-style-type: none;
+}
+
+.product-grid li a {
+  text-decoration: none;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
