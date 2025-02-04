@@ -20,6 +20,12 @@ function cartItemTemplate(item) {
   return newItem;
 }
 
+function totalInCart(total) {
+  const totalValue = `<div class="cart-footer-hide">
+  <p class="cart-total">Total: $${total.toFixed(2)}</p></div>`
+  return totalValue;
+}
+
 export default class ShoppingCart {
     constructor(key, parentSelector) {
         this.key = key;
@@ -32,5 +38,11 @@ export default class ShoppingCart {
         const cartItems = getLocalStorage(this.key) || [];
         const htmlItems = cartItems.map((item) => cartItemTemplate(item));
         document.querySelector(this.parentSelector).innerHTML = htmlItems.join("");
+
+        const totalPrice = cartItems.reduce((sum, item) => sum + (item.FinalPrice * item.quantity), 0);
+
+        const totalCartRender = totalInCart(totalPrice);
+
+        document.querySelector(this.parentSelector).insertAdjacentHTML("beforeend", totalCartRender);
     }
 }

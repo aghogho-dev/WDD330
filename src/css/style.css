@@ -228,6 +228,18 @@ button {
   text-decoration: none;
 }
 
+.cart-footer-hide {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-total {
+  width: 90%;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
