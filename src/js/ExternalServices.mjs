@@ -1,10 +1,12 @@
 const baseURL = "http://wdd330-backend.onrender.com/checkout";
 
-function convertToJson(res) {
+async function convertToJson(res) {
+    const data = await res.json();
     if (res.ok) {
-        return res.json
+        return data;
     } else {
-        throw new Error("Bad Response");
+        // throw new Error("Bad Response");
+        throw { name: "serviceError", message: data };
     }
 }
 
