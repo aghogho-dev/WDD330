@@ -22,7 +22,8 @@ function cartItemTemplate(item) {
 
 function totalInCart(total) {
   const totalValue = `<div class="cart-footer-hide" hidden>
-  <p class="cart-total">Total: $${total.toFixed(2)}</p></div>`
+  <p class="cart-total">Total: $${total.toFixed(2)}</p></div><br>
+  <a href="/checkout/index.html"><button id="checkoutBtn" type="button">Checkout</button></a>`
   return totalValue;
 }
 
@@ -41,8 +42,12 @@ export default class ShoppingCart {
 
         const totalPrice = cartItems.reduce((sum, item) => sum + (item.FinalPrice * item.quantity), 0);
 
-        const totalCartRender = totalInCart(totalPrice);
+        if (totalPrice > 0) {
+          
+          const totalCartRender = totalInCart(totalPrice);
+          
+          document.querySelector(this.parentSelector).insertAdjacentHTML("beforeend", totalCartRender);
 
-        document.querySelector(this.parentSelector).insertAdjacentHTML("beforeend", totalCartRender);
+        }
     }
 }
