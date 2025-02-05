@@ -1,3 +1,7 @@
 import { loadHeaderFooter } from "./utils.mjs";
 
-loadHeaderFooter();
+// loadHeaderFooter();
+
+window.addEventListener("pageshow", () => {
+    loadHeaderFooter();
+  });
