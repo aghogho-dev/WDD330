@@ -209,7 +209,7 @@ button {
   text-align: center;
 }
 
-.product-list {
+.cart-list {
   display: flex;
   flex-direction: column;
   max-width: 100%;

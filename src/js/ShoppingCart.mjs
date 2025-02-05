@@ -21,7 +21,7 @@ function cartItemTemplate(item) {
 }
 
 function totalInCart(total) {
-  const totalValue = `<div class="cart-footer-hide">
+  const totalValue = `<div class="cart-footer-hide" hidden>
   <p class="cart-total">Total: $${total.toFixed(2)}</p></div>`
   return totalValue;
 }
